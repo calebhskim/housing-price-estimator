@@ -1,4 +1,14 @@
-<!doctype html>
+var fs = require('fs');
+var api_key = '';
+
+if (process.argv.length === 3) {
+  api_key = process.argv[2];  
+} else {
+  console.log("Usage: ./start [API_KEY]");
+  process.exit(1);
+}
+
+const template = `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -19,5 +29,12 @@
     </noscript>
     <div id="root"></div>
   </body>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsvhgWjJQRKx4yLyBZuJmqcdKYmSXM1bY&libraries=places"></script>
-</html>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${api_key}&libraries=places"></script>
+</html>`;
+
+fs.writeFile("./public/index.html", template, function(err) {
+    if(err) {
+      console.log("Unable to generate template.");
+      return console.log(err);
+    }
+});
