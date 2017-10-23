@@ -1,0 +1,19 @@
+@font-face {
+  font-family: ProximaNova-Light;
+  src: url("./Font/ProximaNova-Light.otf");
+}
+
+body {
+  font-family: ProximaNova-Light, sans-serif;
+}
+
+.appContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  margin: 10px;
+}
