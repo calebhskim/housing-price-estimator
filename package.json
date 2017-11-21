@@ -1,18 +1,23 @@
 {
-  "name": "grade-cstaley",
+  "name": "house-estimator",
   "version": "2.0.0",
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "express": "^4.16.2",
     "lodash": "^4.17.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-geosuggest": "^2.5.0",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "request": "^2.83.0",
+    "xml2js": "^0.4.19"
   },
+  "proxy": "http://localhost:3000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

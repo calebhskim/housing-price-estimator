@@ -1,10 +1,12 @@
 var fs = require('fs');
-var api_key = '';
+var maps_api_key = '';
+var zillow_key = '';
 
-if (process.argv.length === 3) {
-  api_key = process.argv[2];  
+if (process.argv.length === 4) {
+  maps_api_key = process.argv[2];
+  zillow_key = process.argv[3];
 } else {
-  console.log("Usage: ./start [API_KEY]");
+  console.log("Usage: ./start [MAPS_API_KEY] [ZWSID]");
   process.exit(1);
 }
 
@@ -29,7 +31,11 @@ const template = `<!doctype html>
     </noscript>
     <div id="root"></div>
   </body>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=${api_key}&libraries=places"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=${maps_api_key}&libraries=places"></script>
+  <script>
+    window.zwsid = "${zillow_key}";
+  </script>
+  <script type="text/javascript" src="/static/js/bundle.js"></script>
 </html>`;
 
 fs.writeFile("./public/index.html", template, function(err) {
