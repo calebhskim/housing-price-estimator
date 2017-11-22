@@ -3,5 +3,6 @@ export default {
   data: {
     address: '',
     zwsid: '',
+    addressData: {},
   },
 };

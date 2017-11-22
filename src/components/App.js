@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
 
 import fetchComponent from '../util/fetchComponent';
 import fetchAddressData from '../actions/fetchAddressData';
+import Data from './Data';
 import EstimateButton from './EstimateButton';
 import SearchBar from './SearchBar';
 import Title from './Title';
@@ -24,14 +26,13 @@ class App extends Component {
     this.setState({
       address: newAddress,
     });
-    console.log(newAddress);
   }
 
   estimate() {
     const {
       address: { gmaps },
     } = this.state;
-    
+    console.log(this.state.address);
     const components = get(gmaps, 'address_components', []);
     const streetNumber = fetchComponent(components, 'street_number');
     const street = fetchComponent(components, 'route');
@@ -46,22 +47,33 @@ class App extends Component {
   }
 
   render() {
+    const { address: { label, location } } = this.state;
+    const { addressData } = this.props;
+
     return (
       <div className='appContainer'>
         <Title />
         <SearchBar handleSelect={this.handleSelect} />
         <EstimateButton estimate={this.estimate} />
+        { !isEmpty(addressData) && <Data address={label} location={location} /> }
       </div>
     );
   }
 };
 
 App.propTypes = {
+  addressData: PropTypes.object,
   fetchAddressData: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {
-  return state;
+  const {
+    data: { addressData }
+  } = state;
+
+  return {
+    addressData,  
+  };
 };
 
 const mapDispatchToProps = {

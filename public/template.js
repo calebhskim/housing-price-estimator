@@ -31,7 +31,7 @@ const template = `<!doctype html>
     </noscript>
     <div id="root"></div>
   </body>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=${maps_api_key}&libraries=places"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=${maps_api_key}&libraries=geometry,drawing,places"></script>
   <script>
     window.zwsid = "${zillow_key}";
   </script>
