@@ -32,7 +32,7 @@ class App extends Component {
     const {
       address: { gmaps },
     } = this.state;
-    console.log(this.state.address);
+
     const components = get(gmaps, 'address_components', []);
     const streetNumber = fetchComponent(components, 'street_number');
     const street = fetchComponent(components, 'route');

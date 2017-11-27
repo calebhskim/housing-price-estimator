@@ -54,7 +54,7 @@ class Data extends Component {
                   frameStyle={perc => (
                       perc === 100 ? {} : {backgroundColor: '#ffeb3b'}
                   )}
-                  duration={1000}
+                  duration={2000}
                   formatValue={n => `${parseFloat(n).toFixed(2)} ${addressData.zestimate['$']['currency']}`}
                 />
               </div> : <h2>No Estimate Found</h2>
