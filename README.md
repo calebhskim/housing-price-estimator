@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 # Housing Price Estimator
-A simple react application that estimates housing price based on housing properties such as lot size, number of bathrooms, square footage, etc using a linear regression model. The application pulls addresses from the Google Places API and grabs housing property data from Zillow. The linear regression model can be found [here](https://github.com/joncatanio/housing-classifier).
+A simple react application that estimates housing price based on housing properties such as lot size, number of bathrooms, square footage, etc using a linear regression model. The application pulls addresses from the Google Places API and grabs housing property data from Zillow. The linear regression model can be found [here](https://github.com/joncatanio/housing-classifier). If no data is showing up make sure you are running the proxy server and also the model flask server.
 
 ## Usage
 To run this application you will need [npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/lang/en/docs/install/). Also install [node](https://nodejs.org/en/download/). You will also need a Google API key for the [Places](https://developers.google.com/maps/documentation/javascript/places-autocomplete) API. And a [Zillow](https://www.zillow.com/howto/api/APIOverview.htm) key which can be found [here](https://www.zillow.com/howto/api/APIOverview.htm).

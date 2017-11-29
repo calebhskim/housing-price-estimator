@@ -141,6 +141,15 @@ body {
             animation: fadein 2s;
 }
 
+.geosuggest__input {
+  width: 100%;
+}
+
+.geosuggest__input-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }

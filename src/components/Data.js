@@ -20,7 +20,6 @@ class Data extends Component {
   render() {
     const { address, addressData, location } = this.props;
     const estimate = !!addressData.zestimate ? Number.parseInt(addressData.zestimate['_'], 10) : '';
-    console.log('Estimate', estimate, JSON.stringify(addressData));
     return (
       <div className='data'>
         <h3>{address}</h3>
